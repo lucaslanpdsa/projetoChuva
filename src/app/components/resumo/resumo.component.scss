@@ -18,6 +18,10 @@
     letter-spacing: 0.02em;
     text-align: left;
 
+    &--texto {
+      margin: 0;
+    }
+
     .btn-show-more {
       font-weight: 700;
       line-height: 21px;
