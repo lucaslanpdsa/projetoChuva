@@ -1,0 +1,16 @@
+.discussoes {
+  margin-bottom: 30px;
+  border: 1px solid #ECECEC;
+
+  &__topo {
+    border: 1px solid #ECECEC;
+    background-color: #FDF1EB;
+    color: #4E4E4E;
+    padding: 10px 15px;
+  }
+
+  &__corpo {
+    padding: 15px 20%;
+
+  }
+}
