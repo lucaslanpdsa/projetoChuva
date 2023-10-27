@@ -9,7 +9,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 export class DiscussoesComponent implements OnInit {
 
 
-  clicado: boolean = true;
   constructor() {
   }
 
