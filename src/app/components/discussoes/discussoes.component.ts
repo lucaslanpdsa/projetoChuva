@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, } from '@angular/forms';
 
 @Component({
   selector: 'app-discussoes',
@@ -28,6 +28,12 @@ export class DiscussoesComponent implements OnInit {
   }
 
   submit() {
+    if (this.assunto?.invalid) {
+      alert("Preencha os campos do formulário")
+      return
+    } // se o formulario não estiver preenchido um alert será executado e o formulário nao será enviado
+
+    this.TopicoFoiAnalisado = false
     this.mostrarCriateTopic = false
     this.topicos.push({
       assunto: this.formulario.get("assunto")?.value,
@@ -42,9 +48,19 @@ export class DiscussoesComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
-      assunto: new FormControl(""),
-      conteudo: new FormControl(""),
+      assunto: new FormControl("", [Validators.required]),
+      conteudo: new FormControl("", [Validators.required]),
     })
   } // pega dados do form group
+
+  get assunto() {
+    return this.formulario.get("assunto")
+  }
+  get conteudo() {
+
+    return this.formulario.get("conteudo")
+  }
+
+
 
 }
