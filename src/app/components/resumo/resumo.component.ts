@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumoComponent implements OnInit {
 
+  mostrarResumo: boolean = false //Quando for true o resumo sera expandido
+
+  mostrarMais() {
+    this.mostrarResumo = !this.mostrarResumo
+  }
+
   constructor() { }
 
   ngOnInit(): void {
