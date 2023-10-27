@@ -6,28 +6,26 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './discussoes.component.html',
   styleUrls: ['./discussoes.component.scss']
 })
+
 export class DiscussoesComponent implements OnInit {
 
-  sessaoBase: boolean = true;
+  MostrarSessaoBase: boolean = true; //Quando for true a sessão base sera exibida
 
-  mostrarCriateTopic: boolean = false;
+  mostrarCriateTopic: boolean = false; // Quando for true a div com class "create_topic" que é a sessão que cria um novo topicosera exibida
+
+  formfoiEnviado: boolean = false; // Quando for true a div com class "topicoEnviado" sera exibida
+
+  formulario!: FormGroup; // dados do formulario
+
+  TopicoFoiAnalisado: boolean = false; // Quando for false o topico estará em analise e quando for true o topico será exibido
+
+  topicos: Array<any> = [] //Array que exibira os tópicos no HTML
 
   CriaTopico() {
     this.mostrarCriateTopic = true
-    this.sessaoBase = false
-    this.formEnviado = false
+    this.MostrarSessaoBase = false
+    this.formfoiEnviado = false
   }
-
-  topicos: Array<any> = [
-
-
-  ]
-
-  formEnviado: boolean = false;
-
-  formulario!: FormGroup;
-
-  foiAnalisado: boolean = false;
 
   submit() {
     this.mostrarCriateTopic = false
@@ -35,19 +33,11 @@ export class DiscussoesComponent implements OnInit {
       assunto: this.formulario.get("assunto")?.value,
       conteudo: this.formulario.get("conteudo")?.value
     })
-    this.formEnviado = true
+    this.formfoiEnviado = true
 
     setInterval(() => {
-      this.foiAnalisado = true
+      this.TopicoFoiAnalisado = true
     }, 3000)
-  }
-
-
-
-
-
-  constructor() {
-
   }
 
   ngOnInit(): void {
@@ -55,6 +45,6 @@ export class DiscussoesComponent implements OnInit {
       assunto: new FormControl(""),
       conteudo: new FormControl(""),
     })
-  }
+  } // pega dados do form group
 
 }
