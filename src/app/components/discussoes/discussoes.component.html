@@ -23,7 +23,7 @@
         </p>
         <form (ngSubmit)="submit()" [formGroup]="formulario" #FormDir="ngForm">
           <label class="formulario__label" for="assunto">Assunto</label>
-          <input required class="formulario__input--assunto formulario__input" formControlName="assunto" type="text" id="assunto" placeholder="Defina um tópico sucinto para notificar os autores..." >
+          <input required class="formulario__input--assunto subject formulario__input" formControlName="assunto" type="text" id="assunto" placeholder="Defina um tópico sucinto para notificar os autores..." >
           <label class="formulario__label" for="conteudo">Conteúdo</label>
           <input required class="formulario__input--conteudo formulario__input" formControlName="conteudo" type="text" id="conteudo">
           <div class="formulario__submit">
@@ -57,10 +57,12 @@
       </div>
       <img src="../../../assets/card-footer.png">
     </li>
-    <li class="topico ">
-      <h3 class="topico__assunto">Assunto da pergunta aparece aqui</h3>
-      <p class="topico__nome">Carlos Henrique Santos</p>
-      <p class="topico__conteudo">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
+    <li class="topico answered-topic">
+      <div class="comments-container">
+        <h3 class="topico__assunto ops-topic-subject">Assunto da pergunta aparece aqui</h3>
+        <p class="topico__nome">Carlos Henrique Santos</p>
+        <p class="topico__conteudo">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo...</p>
+      </div>
       <img src="../../../assets/card-footer.png">
     </li>
     <li class="topico ">
