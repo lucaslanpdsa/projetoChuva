@@ -9,7 +9,6 @@
 
   &__titulo {
     &--big {
-      font-family: Roboto;
       font-size: 22px;
       font-weight: 400;
       line-height: 26px;
@@ -20,13 +19,10 @@
 
     &--small {
       margin: 0;
-      font-family: Roboto;
-      font-size: 14px;
       font-weight: 400;
       line-height: 16px;
       letter-spacing: 0em;
       text-align: left;
-
     }
   }
 
@@ -62,7 +58,7 @@
       align-items: flex-end;
       justify-content: center;
       font-family: Quicksand;
-      font-size: 14px;
+
       font-weight: 400;
       line-height: 18px;
       letter-spacing: 0em;
